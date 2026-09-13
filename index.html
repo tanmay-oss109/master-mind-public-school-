@@ -1,0 +1,1269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master Mind Public School | Srinagar Garhwal</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #24343d;
+  background: #f7faf8;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  background: white;
+  padding: 14px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #dce9e0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.school-logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #176b4d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 29px;
+  font-weight: bold;
+  border: 4px solid #d8eddf;
+}
+
+.logo-area h1 {
+  font-size: 21px;
+  color: #12304a;
+  line-height: 1.3;
+}
+
+.logo-area p {
+  color: #176b4d;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  gap: 8px;
+}
+
+nav a {
+  color: #12304a;
+  font-weight: bold;
+  padding: 10px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+nav a:hover,
+nav a.active {
+  background: #176b4d;
+  color: white;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  background:
+    linear-gradient(rgba(7,44,31,.70), rgba(7,44,31,.75)),
+    url("school1.jpg") center/cover no-repeat;
+  color: white;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.tagline,
+.small-title {
+  color: #d6a83d;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.hero h2 {
+  font-size: clamp(35px, 6vw, 68px);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.hero h3 {
+  font-size: clamp(19px, 3vw, 28px);
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.hero p:not(.tagline) {
+  font-size: 17px;
+  margin-bottom: 28px;
+}
+
+.hero-button,
+.outline-button {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.hero-button {
+  background: #d6a83d;
+  color: #172b25;
+}
+
+.hero-button:hover {
+  background: white;
+}
+
+/* GENERAL */
+
+.section {
+  padding: 75px 7%;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.section-heading h2,
+.environment-content h2,
+.contact-details h2 {
+  color: #12304a;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.25;
+  margin-bottom: 15px;
+}
+
+.section-heading > p:last-child {
+  color: #68777b;
+  font-size: 16px;
+}
+
+.about {
+  background: white;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.about-card {
+  padding: 32px 25px;
+  text-align: center;
+  border: 1px solid #dce9e0;
+  border-radius: 12px;
+  background: #fcfffd;
+  transition: .3s;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(17,72,48,.08);
+}
+
+.card-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.about-card h3 {
+  color: #176b4d;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.about-card p {
+  color: #68777b;
+  font-size: 15px;
+}
+
+/* MESSAGES */
+
+.messages-section {
+  background: #eaf6ef;
+}
+
+.message-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.message-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #dce9e0;
+  box-shadow: 0 6px 22px rgba(16,65,44,.05);
+}
+
+.leader-image {
+  width: 100%;
+  height: 310px;
+  background: #dceee2;
+  overflow: hidden;
+}
+
+.leader-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.message-content {
+  padding: 28px;
+}
+
+.leader-role {
+  display: inline-block;
+  background: #eaf6ef;
+  color: #176b4d;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.message-content h3 {
+  color: #12304a;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.quote-mark {
+  color: #d6a83d;
+  font-size: 45px;
+  line-height: 1;
+  height: 32px;
+  font-family: Georgia, serif;
+}
+
+.message-content p:not(.quote-mark):not(.signature) {
+  color: #68777b;
+  font-size: 15px;
+  margin-bottom: 13px;
+}
+
+.signature {
+  color: #176b4d;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 18px;
+}
+
+/* FACILITIES */
+
+.facilities-section {
+  background: white;
+}
+
+.facility-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.facility-card {
+  display: flex;
+  background: #fbfdfb;
+  border: 1px solid #dce9e0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.facility-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(15,74,47,.08);
+}
+
+.facility-image {
+  width: 42%;
+  min-height: 220px;
+  flex-shrink: 0;
+  background: #dceee2;
+}
+
+.facility-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.facility-text {
+  padding: 24px;
+}
+
+.facility-text h3 {
+  color: #176b4d;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.facility-text p {
+  color: #68777b;
+  font-size: 14px;
+}
+
+/* ENVIRONMENT */
+
+.environment-section {
+  min-height: 390px;
+  display: flex;
+  align-items: center;
+  padding: 70px 7%;
+  color: white;
+  background:
+    linear-gradient(rgba(10,63,43,.86), rgba(10,63,43,.90)),
+    url("school4.jpg") center/cover no-repeat;
+}
+
+.environment-content {
+  max-width: 760px;
+}
+
+.environment-content h2 {
+  color: white;
+}
+
+.environment-content p:not(.small-title) {
+  color: #e4f1e8;
+  margin-bottom: 15px;
+}
+
+.outline-button {
+  border: 1px solid white;
+  color: white;
+  margin-top: 15px;
+}
+
+.outline-button:hover {
+  background: white;
+  color: #176b4d;
+}
+
+/* QUICK INFO */
+
+.quick-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  background: #f0f8f3;
+  padding: 45px 7%;
+}
+
+.info-box {
+  text-align: center;
+  padding: 20px;
+}
+
+.info-box span {
+  font-size: 28px;
+}
+
+.info-box h3 {
+  color: #12304a;
+  margin: 8px 0;
+}
+
+.info-box p {
+  color: #68777b;
+  font-size: 14px;
+}
+
+/* CONTACT HERO */
+
+.contact-hero {
+  padding: 70px 7%;
+  background:
+    linear-gradient(rgba(10,63,43,.88), rgba(10,63,43,.88)),
+    url("school1.jpg") center/cover no-repeat;
+  color: white;
+  text-align: center;
+}
+
+.contact-hero > div {
+  max-width: 750px;
+  margin: auto;
+}
+
+.contact-hero h2 {
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.contact-hero p:last-child {
+  color: #e3f2e7;
+}
+
+/* CONTACT */
+
+.contact-section {
+  padding: 75px 7%;
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 60px;
+  max-width: 1350px;
+  margin: auto;
+}
+
+.contact-details > p:not(.small-title) {
+  color: #68777b;
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: flex-start;
+}
+
+.contact-item > span {
+  background: #eaf6ef;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.contact-item h3 {
+  color: #12304a;
+  font-size: 17px;
+  margin-bottom: 3px;
+}
+
+.contact-item p {
+  color: #68777b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* FORM */
+
+.form-container {
+  background: white;
+  padding: 35px;
+  border-radius: 14px;
+  border: 1px solid #dce9e0;
+  box-shadow: 0 7px 30px rgba(13,69,44,.05);
+}
+
+.form-container h2 {
+  color: #12304a;
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+.form-note {
+  color: #68777b;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  color: #12304a;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d3e1d8;
+  border-radius: 7px;
+  font: inherit;
+  font-size: 14px;
+  color: #24343d;
+  background: #fbfdfb;
+  outline: none;
+  transition: .3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #176b4d;
+  box-shadow: 0 0 0 3px rgba(23,107,77,.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.form-buttons button {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: .3s;
+}
+
+.reset-button {
+  background: #edf1ee;
+  color: #42514a;
+}
+
+.reset-button:hover {
+  background: #dce4de;
+}
+
+.submit-button {
+  background: #176b4d;
+  color: white;
+}
+
+.submit-button:hover {
+  background: #0d4935;
+}
+
+.form-message {
+  color: #176b4d;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+/* FOOTER */
+
+.footer {
+  background: #12304a;
+  color: white;
+  padding: 40px 7% 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.footer h3 {
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.footer p {
+  color: #c4d3dc;
+  font-size: 13px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+.footer-links a {
+  color: #e2f1e7;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.footer-links a:hover {
+  color: #d6a83d;
+}
+
+.copyright {
+  grid-column: 1 / -1;
+  border-top: 1px solid rgba(255,255,255,.15);
+  padding-top: 18px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .header {
+    padding: 14px 4%;
+  }
+
+  .section {
+    padding: 55px 5%;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .message-grid,
+  .facility-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-section {
+    padding: 55px 5%;
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-area h1 {
+    font-size: 17px;
+  }
+
+  .logo-area p {
+    font-size: 10px;
+  }
+
+  nav {
+    justify-content: center;
+    width: 100%;
+  }
+
+  nav a {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: 440px;
+    padding: 55px 18px;
+  }
+
+  .hero h2 {
+    font-size: 38px;
+  }
+
+  .hero h3 {
+    font-size: 19px;
+  }
+
+  .hero p:not(.tagline) {
+    font-size: 14px;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .leader-image {
+    height: 270px;
+  }
+
+  .message-content {
+    padding: 22px;
+  }
+
+  .facility-card {
+    display: block;
+  }
+
+  .facility-image {
+    width: 100%;
+    height: 220px;
+    min-height: 0;
+  }
+
+  .facility-text {
+    padding: 22px;
+  }
+
+  .quick-info {
+    grid-template-columns: 1fr;
+    padding: 35px 7%;
+    gap: 5px;
+  }
+
+  .contact-hero {
+    padding: 55px 5%;
+  }
+
+  .form-container {
+    padding: 22px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form-buttons {
+    justify-content: stretch;
+  }
+
+  .form-buttons button {
+    flex: 1;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 35px 5% 20px;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo-area">
+    <div class="school-logo">M</div>
+    <div>
+      <h1>Master Mind Public School</h1>
+      <p>Senior Secondary | CBSE</p>
+    </div>
+  </div>
+
+  <nav>
+    <a id="homeNav" class="active" onclick="showPage('home')">Home</a>
+    <a id="contactNav" onclick="showPage('contact')">Contact Us</a>
+  </nav>
+</header>
+
+
+<!-- ================= HOME PAGE ================= -->
+<main id="homePage" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="tagline">WELCOME TO EXCELLENCE IN EDUCATION</p>
+      <h2>Master Mind Public School</h2>
+      <h3>Senior Secondary CBSE School</h3>
+      <p>Srinagar Garhwal, Pauri Road, Uttarakhand</p>
+      <a class="hero-button" onclick="showPage('contact')">
+        Contact Our School
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about">
+    <div class="section-heading">
+      <p class="small-title">ABOUT OUR SCHOOL</p>
+      <h2>Learning Today, Leading Tomorrow</h2>
+      <p>
+        Master Mind Public School Senior Secondary is committed to providing
+        quality education, developing strong values, and nurturing the talents
+        of every student in a safe and inspiring environment.
+      </p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="card-icon">🎓</div>
+        <h3>Quality Education</h3>
+        <p>
+          We focus on academic excellence, creativity, discipline, and
+          all-round development of students.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="card-icon">🌿</div>
+        <h3>Peaceful Environment</h3>
+        <p>
+          Our school is surrounded by greenery and a peaceful atmosphere,
+          away from the noise and pollution of busy areas.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="card-icon">🌟</div>
+        <h3>Holistic Development</h3>
+        <p>
+          We encourage students to grow through academics, sports,
+          activities, teamwork, and moral values.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MESSAGES -->
+  <section class="section messages-section">
+    <div class="section-heading">
+      <p class="small-title">LEADERSHIP</p>
+      <h2>Messages from Our Leaders</h2>
+      <p>
+        Our school leadership believes that education is the foundation
+        of a bright, responsible, and successful future.
+      </p>
+    </div>
+
+    <div class="message-grid">
+
+      <!-- PRINCIPAL -->
+      <div class="message-card">
+        <div class="leader-image">
+          <img src="principal.jpg" alt="Principal Meena Rawat">
+        </div>
+
+        <div class="message-content">
+          <span class="leader-role">Principal's Message</span>
+          <h3>Mrs. Meena Rawat</h3>
+          <p class="quote-mark">“</p>
+
+          <p>
+            Education is not only about achieving good marks; it is about
+            becoming a good human being. At Master Mind Public School, we
+            strive to create an environment where every child feels valued,
+            confident, and motivated to learn.
+          </p>
+
+          <p>
+            Our aim is to provide students with knowledge, discipline,
+            compassion, and the skills required to face the future with
+            confidence. Together, let us inspire young minds to dream big
+            and work sincerely towards their goals.
+          </p>
+
+          <p class="signature">— Meena Rawat</p>
+        </div>
+      </div>
+
+      <!-- MANAGER -->
+      <div class="message-card">
+        <div class="leader-image">
+          <img src="manager.jpg" alt="Manager Arjun Singh">
+        </div>
+
+        <div class="message-content">
+          <span class="leader-role">Manager's Message</span>
+          <h3>Mr. Arjun Singh</h3>
+          <p class="quote-mark">“</p>
+
+          <p>
+            A school is a place where dreams are shaped and character is
+            built. Our vision is to provide students with a strong educational
+            foundation along with opportunities to explore their abilities.
+          </p>
+
+          <p>
+            We believe in creating a supportive, progressive, and
+            student-friendly institution where education, values, and
+            responsibility go hand in hand.
+          </p>
+
+          <p class="signature">— Arjun Singh</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FACILITIES -->
+  <section class="section facilities-section">
+    <div class="section-heading">
+      <p class="small-title">OUR FACILITIES</p>
+      <h2>Explore Our School</h2>
+      <p>
+        A supportive campus that encourages learning, exploration,
+        physical activity, and a connection with nature.
+      </p>
+    </div>
+
+    <div class="facility-grid">
+
+      <div class="facility-card">
+        <div class="facility-image">
+          <img src="school1.jpg" alt="School campus">
+        </div>
+        <div class="facility-text">
+          <h3>🏫 School Campus</h3>
+          <p>
+            Our school provides a welcoming and positive atmosphere where
+            students can learn, interact, and grow together.
+          </p>
+        </div>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-image">
+          <img src="school2.jpg" alt="School laboratory">
+        </div>
+        <div class="facility-text">
+          <h3>🔬 Science Laboratories</h3>
+          <p>
+            Practical learning helps students understand scientific concepts
+            through observation, experiments, and discovery.
+          </p>
+        </div>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-image">
+          <img src="school3.jpg" alt="School playground">
+        </div>
+        <div class="facility-text">
+          <h3>⚽ Playground and Sports</h3>
+          <p>
+            Sports and outdoor activities help students develop fitness,
+            teamwork, confidence, and a healthy competitive spirit.
+          </p>
+        </div>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-image">
+          <img src="school4.jpg" alt="Green school surroundings">
+        </div>
+        <div class="facility-text">
+          <h3>🌳 Green and Peaceful Environment</h3>
+          <p>
+            Located in the beautiful surroundings of Srinagar Garhwal,
+            our school offers a calm, green, and peaceful environment
+            away from unnecessary noise.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ENVIRONMENT -->
+  <section class="environment-section">
+    <div class="environment-content">
+      <p class="small-title">OUR ENVIRONMENT</p>
+      <h2>A Peaceful Place to Learn and Grow</h2>
+
+      <p>
+        Master Mind Public School is situated in the scenic region of
+        Srinagar Garhwal on Pauri Road, Uttarakhand. The school environment
+        is full of peace, greenery, and natural beauty. Away from the noise
+        of crowded surroundings, students can focus on their studies while
+        enjoying a refreshing atmosphere.
+      </p>
+
+      <p>
+        We believe that a clean, green, and positive environment supports
+        concentration, creativity, and emotional well-being.
+      </p>
+
+      <a class="outline-button" onclick="showPage('contact')">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+
+  <!-- QUICK INFORMATION -->
+  <section class="quick-info">
+    <div class="info-box">
+      <span>📍</span>
+      <h3>Location</h3>
+      <p>Srinagar Garhwal, Pauri Road, Uttarakhand</p>
+    </div>
+
+    <div class="info-box">
+      <span>📚</span>
+      <h3>Affiliation</h3>
+      <p>CBSE | Senior Secondary School</p>
+    </div>
+
+    <div class="info-box">
+      <span>🌱</span>
+      <h3>Our Values</h3>
+      <p>Knowledge, Discipline, Respect, and Excellence</p>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ================= CONTACT PAGE ================= -->
+<main id="contactPage" class="page">
+
+  <!-- CONTACT HERO -->
+  <section class="contact-hero">
+    <div>
+      <p class="small-title">GET IN TOUCH</p>
+      <h2>Contact Our School</h2>
+      <p>
+        We welcome your questions, suggestions, complaints, and feedback.
+        Please fill out the form below.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT CONTENT -->
+  <section class="contact-section">
+
+    <div class="contact-details">
+      <p class="small-title">CONTACT INFORMATION</p>
+      <h2>We Would Love to Hear From You</h2>
+
+      <p>
+        Your feedback helps us improve our school and create a better
+        learning experience for students.
+      </p>
+
+      <div class="contact-item">
+        <span>📍</span>
+        <div>
+          <h3>School Address</h3>
+          <p>Master Mind Public School Senior Secondary</p>
+          <p>Pauri Road, Srinagar Garhwal</p>
+          <p>Uttarakhand, India</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <span>📧</span>
+        <div>
+          <h3>Email</h3>
+          <p>sarejaheseachaa@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <span>📝</span>
+        <div>
+          <h3>Feedback and Complaints</h3>
+          <p>
+            Share your suggestions or concerns with us through the form.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-container">
+      <h2>Complaint / Feedback Form</h2>
+      <p class="form-note">
+        Please provide accurate information so that we can respond
+        appropriately.
+      </p>
+
+      <form id="contactForm">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name"
+                   placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age *</label>
+            <input type="number" id="age" name="age"
+                   placeholder="Enter your age" min="1" max="100" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address *</label>
+          <textarea id="address" name="address" rows="3"
+                    placeholder="Enter your complete address" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email"
+                   placeholder="Enter your email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="mobile">Mobile Number *</label>
+            <input type="tel" id="mobile" name="mobile"
+                   placeholder="Enter mobile number"
+                   pattern="[0-9]{10}" maxlength="10" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="feedback">Complaint or Feedback *</label>
+          <textarea id="feedback" name="feedback" rows="6"
+                    placeholder="Write your complaint or feedback here..."
+                    required></textarea>
+        </div>
+
+        <div class="form-buttons">
+          <button type="reset" class="reset-button">Reset</button>
+          <button type="submit" class="submit-button">Submit Form</button>
+        </div>
+
+        <p id="formMessage" class="form-message"></p>
+
+      </form>
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    <h3>Master Mind Public School</h3>
+    <p>Senior Secondary | CBSE</p>
+    <p>Srinagar Garhwal, Pauri Road, Uttarakhand</p>
+  </div>
+
+  <div class="footer-links">
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('contact')">Contact Us</a>
+  </div>
+
+  <div class="copyright">
+    <p>© 2026 Master Mind Public School. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+<script>
+/* PAGE SWITCHING */
+
+function showPage(page) {
+  const homePage = document.getElementById("homePage");
+  const contactPage = document.getElementById("contactPage");
+  const homeNav = document.getElementById("homeNav");
+  const contactNav = document.getElementById("contactNav");
+
+  if (page === "home") {
+    homePage.classList.add("active");
+    contactPage.classList.remove("active");
+
+    homeNav.classList.add("active");
+    contactNav.classList.remove("active");
+  } else {
+    homePage.classList.remove("active");
+    contactPage.classList.add("active");
+
+    homeNav.classList.remove("active");
+    contactNav.classList.add("active");
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+
+/* CONTACT FORM */
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const age = document.getElementById("age").value;
+  const address = document.getElementById("address").value;
+  const email = document.getElementById("email").value;
+  const mobile = document.getElementById("mobile").value;
+  const feedback = document.getElementById("feedback").value;
+
+  const subject = encodeURIComponent("School Complaint / Feedback");
+
+  const body = encodeURIComponent(
+    "Master Mind Public School - Contact Form\n\n" +
+    "Name: " + name + "\n" +
+    "Age: " + age + "\n" +
+    "Address: " + address + "\n" +
+    "Email: " + email + "\n" +
+    "Mobile No: " + mobile + "\n\n" +
+    "Complaint / Feedback:\n" + feedback
+  );
+
+  window.location.href =
+    "mailto:sarejaheseachaa@gmail.com?subject=" +
+    subject + "&body=" + body;
+
+  document.getElementById("formMessage").textContent =
+    "Your email application is opening. Please send the prepared email.";
+});
+</script>
+
+</body>
+</html>
